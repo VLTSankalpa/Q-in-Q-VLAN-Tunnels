@@ -1,0 +1,11 @@
+en
+conf t
+cdp run
+hostname CE-B4
+line con 0
+no exec-timeout
+exit
+no ip domain lookup
+int r g0/0-3
+no shut
+cdp enable

@@ -1,0 +1,22 @@
+en
+conf t
+cdp run
+hostname CE-A4
+line con 0
+no exec-timeout
+exit
+no ip domain lookup
+int r g0/0-3
+no shut
+cdp enable
+
+int g0/0.14
+encap dot1q 14
+ip add 10.1.4.4 255.255.255.0
+
+int loopback 0
+ip add 10.4.4.4 255.255.255.0
+exit
+
+router ospf 1
+network 0.0.0.0 0.0.0.0 area 0

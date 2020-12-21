@@ -1,0 +1,20 @@
+en
+conf t
+cdp run
+hostname CE-A-SW-3
+no ip domain lookup
+line con 0
+no exec-timeout
+exit
+int r g0/0-3
+no shut
+cdp enable
+exit
+
+vlan 12
+vtp domain CXA
+vtp mode server 
+
+int r g0/0-3
+switchport trunk encap dot1q
+switchport mode trunk

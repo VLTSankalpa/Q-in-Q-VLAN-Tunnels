@@ -9,3 +9,15 @@ no ip domain lookup
 int r g0/0-3
 no shut
 cdp enable
+
+
+int g0/0.15
+encap dot1q 15
+ip add 10.1.5.5 255.255.255.0
+
+int loopback 0
+ip add 10.5.5.5 255.255.255.0
+exit
+
+router ospf 1
+network 0.0.0.0 0.0.0.0 area 0

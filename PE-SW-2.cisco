@@ -10,9 +10,17 @@ int r g0/0-3
 no shut
 cdp enable
 
-vtp domain CXA
+vtp domain SP
 vtp mode client
 
-int r g0/0-3
+int g0/0
 switchport trunk encap dot1q
 switchport mode trunk
+
+int g0/1
+switchport mode dot1q-tunnel
+switchport access vlan 100
+spanning-tree portfast edge
+l2protocol-tunnel stp
+l2protocol-tunnel vtp
+l2protocol-tunnel cdp

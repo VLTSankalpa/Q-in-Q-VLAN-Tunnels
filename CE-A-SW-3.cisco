@@ -11,10 +11,18 @@ no shut
 cdp enable
 exit
 
-vlan 12
 vtp domain CXA
-vtp mode server 
+vtp mode server
 
 int r g0/0-3
 switchport trunk encap dot1q
 switchport mode trunk
+exit
+
+vlan 12
+vlan 13
+vlan 14
+vlan 15
+vlan 16
+vlan 17
+vlan 100
